@@ -31,7 +31,7 @@ function waterfalls(father, son) {
             //2.8 剩余盒子的定位（第二行开始）
             innerContainer[i].style.position = "absolute"
             innerContainer[i].style.left = minIndex * boxWidth + "px"
-            innerContainer[i].style.top = minBoxHeight + 80 + "px" //这里+80是我将标题“热门评论”移进来放在了第一行，所以要加上标题的高度及上下margin
+            innerContainer[i].style.top = minBoxHeight + "px" //这里+80是我将标题“热门评论”移进来放在了第一行，所以要加上标题的高度及上下margin
             boxHeightArray[minIndex] += boxHeight //2.9 更新高度
         }
     }
