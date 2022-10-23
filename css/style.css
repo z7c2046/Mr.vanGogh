@@ -117,17 +117,10 @@ h2 {
   line-height: var(--moreDivHeight);
   /* 设置文字所占的高度，当文字所占的高度和当前外层元素一样高时，也就垂直居中了 */
   /* 这两条代码的意思就是使div里面的文字水平居中对齐 */
-  width: 150px;
+  width: 100px;
   height: var(--moreDivHeight);
-  border: 3px solid white;
-  border-radius: 50px;
-  background: linear-gradient(145deg, #db393f, #b93035);
-  box-shadow: 5px 5px 10px #521518, -5px -5px 10px #ff555e;
-}
-
-.moreBox .more:active {
-  background: linear-gradient(145deg, #b93035, #db393f);
-  box-shadow: 5px 5px 10px #521518, -5px -5px 10px #ff555e;
+  background-color: transparent;
+  border-bottom: 3px solid white;
 }
 
 /* =========================================== */
