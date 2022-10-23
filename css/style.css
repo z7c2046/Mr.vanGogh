@@ -20,15 +20,12 @@ body {
 .head {
   grid-template-areas: head;
 }
-
 .hotCommentsTittle {
   grid-template-areas: hotCommentsTittle;
 }
-
 .commentsTittle {
   grid-template-areas: commentsTittle;
 }
-
 .commentsTittle .container {
   grid-template-areas: container;
 }
@@ -96,6 +93,10 @@ h2 {
   /* 上右下左 */
 }
 
+:root {
+  --moreDivHeight: 25px;
+  /* css自定义变量详情参见：https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties */
+}
 .moreBox {
   display: grid;
   align-items: center;
@@ -104,23 +105,16 @@ h2 {
   font-weight: bold;
   color: white;
 }
-
-:root {
-  --moreDivHeight: 50px;
-  /* css自定义变量详情参见：https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties */
-  --mobbileDivHeight: 30px;
-}
-
 .moreBox .more {
   text-align: center;
   /* 使文字水平居中 */
   line-height: var(--moreDivHeight);
   /* 设置文字所占的高度，当文字所占的高度和当前外层元素一样高时，也就垂直居中了 */
   /* 这两条代码的意思就是使div里面的文字水平居中对齐 */
-  width: 100px;
+  width: 80px;
   height: var(--moreDivHeight);
-  background-color: transparent;
   border-bottom: 3px solid white;
+  transform: scaleX(1.2) scaleY(1.2);
 }
 
 /* =========================================== */
@@ -171,13 +165,6 @@ h2 {
     width: 310px;
     height: 233px;
   }
-
-  .moreBox .more {
-    text-align: center;
-    line-height: var(--mobbileDivHeight);
-    width: 80px;
-    height: 30px;
-  }
 }
 
 @media only screen and (min-width: 740px) and (max-width: 899px) {
@@ -189,17 +176,9 @@ h2 {
     width: 400px;
     height: 300px;
   }
-
-  .moreBox .more {
-    text-align: center;
-    line-height: var(--mobbileDivHeight);
-    width: 80px;
-    height: 30px;
-  }
 }
 
 @media screen and (min-width: 900px) {
-
   .commentBox:hover,
   .commentBox1:hover {
     font-weight: bold;
