@@ -4,11 +4,6 @@ const commentBox = document.getElementsByClassName("commentBox") //如英语所�
 const commentBox1 = document.getElementsByClassName("commentBox1")
 const moreButton = document.getElementById("more")//获取更多评论的元素
 
-//创建元素
-function createElements(fatherElement, needsElement) { //函数传参。传父级元素进去，和要添加的元素
-    var needsElement = document.createElement(needsElement) //创建div元素(这个创建的是评论的div，之后还需要用户名，头像，日期)
-    fatherElement.appendChild(needsElement) //添加到节点
-}
 // 获取数据
 async function getData(id, limit) {
     const response = await fetch("https://netease-cloud-music-api-zeta-plum.vercel.app/comment/music?id="
