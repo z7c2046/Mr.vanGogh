@@ -1,196 +1,216 @@
 * {
-    user-select: none;
+  user-select: none;
 }
 
 body {
-    scroll-behavior: smooth;
-    background-color: #cd353b;
-    /* background-color: #e3e5e5; */
-    display: grid;
-    grid-template-areas:
-        "head"
-        "container"
-        "banner"
-        "more"
-    ;
-    row-gap: 30px;
+  scroll-behavior: smooth;
+  background-color: #cd353b;
+  /* background-color: #e3e5e5; */
+  display: grid;
+  grid-template-areas:
+    "head"
+    "hotCommentsTittle"
+    "container"
+    "commentsTittle"
+    "banner"
+    "more";
+  row-gap: 20px;
 }
 
 .head {
-    grid-template-areas: head;
+  grid-template-areas: head;
 }
 
-.container {
-    grid-template-areas: container;
+.hotCommentsTittle {
+  grid-template-areas: hotCommentsTittle;
+}
+
+.commentsTittle {
+  grid-template-areas: commentsTittle;
+}
+
+.commentsTittle .container {
+  grid-template-areas: container;
 }
 
 .banner {
-    grid-template-areas: banner;
+  grid-template-areas: banner;
 }
 
 .more {
-    grid-template-areas: more;
+  grid-template-areas: more;
 }
 
 /* =========================================== */
 .head {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    margin-bottom: 20px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 20px;
 }
 
 .head h1 {
-    color: white;
-    margin: 30px auto;
+  color: white;
+  margin: 30px auto;
 }
 
 .head .video {
-    margin: 20px 0px;
+  margin: 20px 0px;
 }
 
 .container,
 .banner {
-    position: relative;
-    /* overflow: hidden; */
+  position: relative;
+  /* overflow: hidden; */
 }
 
 .container .commentBox,
 .banner .commentBox1 {
-    width: 300px;
-    background-color: rgb(236, 236, 236);
-    border-radius: 5px;
-    margin: 0px 20px 20px 20px;
-    /* 上右下左 */
-    padding: 10px;
-    /* word-wrap: break-word; */
-    /* 自动换行 */
-    float: left;
-    border: 0.8px solid black;
-    display: grid;
-    grid-template-areas:
-        "profile comment comment"
-        "profile nickname nickname"
-        "profile timestamp timestamp"
-    ;
-    column-gap: 10px;
+  width: 300px;
+  background-color: rgb(236, 236, 236);
+  border-radius: 5px;
+  margin: 0px 20px 20px 20px;
+  /* 上右下左 */
+  padding: 10px;
+  /* word-wrap: break-word; */
+  /* 自动换行 */
+  float: left;
+  border: 0.8px solid black;
+  display: grid;
+  grid-template-areas:
+    "profile comment comment"
+    "profile nickname nickname"
+    "profile timestamp timestamp";
+  column-gap: 10px;
+}
+
+h2 {
+  width: 320px;
+  height: 40px;
+  color: white;
+  font-weight: bolder;
+  /*   border: 0.8px solid black; */
+  /* 测试时加的边框，为了看清楚高度对布局的影响 */
+  /*   margin: 20px 0px 20px 0px; //老版布局，放在两个box内部的时候 */
+  margin: 0px 20px 0px 20px;
+  /* 上右下左 */
 }
 
 .moreBox {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    cursor: pointer;
-    font-weight: bold;
-    color: white;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
 }
 
 :root {
-    --moreDivHeight: 50px;
-    /* css自定义变量详情参见：https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties */
+  --moreDivHeight: 50px;
+  /* css自定义变量详情参见：https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties */
+  --mobbileDivHeight: 30px;
 }
 
 .moreBox .more {
-    text-align: center;
-    /* 使文字水平居中 */
-    line-height: var(--moreDivHeight);
-    /* 设置文字所占的高度，当文字所占的高度和当前外层元素一样高时，也就垂直居中了 */
-    /* 这两条代码的意思就是使div里面的文字水平居中对齐 */
-    width: 150px;
-    height: var(--moreDivHeight);
-    border: 3px solid white;
-    border-radius: 50px;
-    background: linear-gradient(145deg, #db393f, #b93035);
-    box-shadow: 5px 5px 10px #521518,
-        -5px -5px 10px #ff555e;
+  text-align: center;
+  /* 使文字水平居中 */
+  line-height: var(--moreDivHeight);
+  /* 设置文字所占的高度，当文字所占的高度和当前外层元素一样高时，也就垂直居中了 */
+  /* 这两条代码的意思就是使div里面的文字水平居中对齐 */
+  width: 150px;
+  height: var(--moreDivHeight);
+  border: 3px solid white;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #db393f, #b93035);
+  box-shadow: 5px 5px 10px #521518, -5px -5px 10px #ff555e;
 }
 
 .moreBox .more:active {
-    background: linear-gradient(145deg, #b93035, #db393f);
-    box-shadow: 5px 5px 10px #521518,
-        -5px -5px 10px #ff555e;
+  background: linear-gradient(145deg, #b93035, #db393f);
+  box-shadow: 5px 5px 10px #521518, -5px -5px 10px #ff555e;
 }
-
-
 
 /* =========================================== */
 .commentBox div:nth-child(1),
 .commentBox1 div:nth-child(1) {
-    grid-area: profile;
+  grid-area: profile;
 }
 
 .commentBox div:nth-child(1) img,
 .commentBox1 div:nth-child(1) img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-top: 10px;
-    margin-left: 5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
 .commentBox div:nth-child(2),
 .commentBox1 div:nth-child(2) {
-    grid-area: comment;
+  grid-area: comment;
 }
 
 .commentBox div:nth-child(2) p,
 .commentBox div:nth-child(2) p {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .commentBox div:nth-child(3),
 .commentBox1 div:nth-child(3) {
-    grid-area: nickname;
-    text-align: right;
-    font-size: 14px;
+  grid-area: nickname;
+  text-align: right;
+  font-size: 14px;
 }
 
 .commentBox div:nth-child(4),
 .commentBox1 div:nth-child(4) {
-    grid-area: timestamp;
-    text-align: right;
-    font-size: 14px;
+  grid-area: timestamp;
+  text-align: right;
+  font-size: 14px;
 }
-
-h2 {
-    color: white;
-    height: 40px;
-    /* border: 0.8px solid black; */
-    /* 测试时加的边框，为了看清楚高度对布局的影响 */
-    margin: 20px 0px 20px 0px;
-    /* 上右下左 */
-}
-
 
 @media only screen and (min-width: 100px) and (max-width: 741px) {
-    body {
-        font-weight: bold;
-    }
+  body {
+    font-weight: bold;
+  }
 
-    .video {
-        width: 310px;
-        height: 233px;
-    }
+  .video {
+    width: 310px;
+    height: 233px;
+  }
 
+  .moreBox .more {
+    text-align: center;
+    line-height: var(--mobbileDivHeight);
+    width: 80px;
+    height: 30px;
+  }
 }
 
 @media only screen and (min-width: 740px) and (max-width: 899px) {
-    body {
-        font-weight: bold;
-    }
+  body {
+    font-weight: bold;
+  }
 
-    .video {
-        width: 400px;
-        height: 300px;
-    }
+  .video {
+    width: 400px;
+    height: 300px;
+  }
+
+  .moreBox .more {
+    text-align: center;
+    line-height: var(--mobbileDivHeight);
+    width: 80px;
+    height: 30px;
+  }
 }
 
-@media screen and (min-width:900px) {
+@media screen and (min-width: 900px) {
 
-    .commentBox:hover,
-    .commentBox1:hover {
-        font-weight: bold;
-        transform: scaleX(1.07) scaleY(1.07);
-        transition: transform 0.5s;
-    }
+  .commentBox:hover,
+  .commentBox1:hover {
+    font-weight: bold;
+    transform: scaleX(1.07) scaleY(1.07);
+    transition: transform 0.5s;
+  }
 }
