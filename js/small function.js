@@ -32,3 +32,8 @@ function getStyle(obj, attr) {
     }
 }
 // getStyle(document.querySelector("hotCommentsTittle"), "margin")
+/* 创建元素 */
+function createElements(fatherElement, needsElement) { //函数传参。传父级元素进去，和要添加的元素
+    var needsElement = document.createElement(needsElement) //创建div元素(这个创建的是评论的div，之后还需要用户名，头像，日期)
+    fatherElement.appendChild(needsElement) //添加到节点
+}
